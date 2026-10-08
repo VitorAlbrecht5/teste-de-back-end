@@ -1,0 +1,37 @@
+{
+  "name": "aula06-testes-de-middleware-e-autenticacao",
+  "version": "1.0.0",
+  "description": "Aula 06 - Testes de Middleware, Autenticação JWT e RBAC com Express, Jest e Supertest (SENAI)",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest --verbose --runInBand",
+    "test:watch": "jest --watchAll --verbose --runInBand"
+  },
+  "keywords": [
+    "express",
+    "jwt",
+    "jsonwebtoken",
+    "middleware",
+    "autenticacao",
+    "autorizacao",
+    "rbac",
+    "jest",
+    "supertest",
+    "senai"
+  ],
+  "author": "SENAI",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 10000
+  }
+}

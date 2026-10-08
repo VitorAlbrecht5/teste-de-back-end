@@ -1,0 +1,65 @@
+### ====================================================================
+### 🧪 ARQUIVO DE REQUISIÇÕES HTTP - AULA 06
+### Dica: Instale a extensão "REST Client" ou "Thunder Client" no VS Code
+### para executar as requisições clicando no botão "Send Request" acima de cada rota!
+### ====================================================================
+
+@baseUrl = http://localhost:3000
+
+### 1️⃣ LOGIN COMO ADMINISTRADORA (ANA)
+# @name loginAdmin
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "email": "ana@empresa.com",
+  "senha": "123456"
+}
+
+### 2️⃣ LOGIN COMO USUÁRIO COMUM (CARLOS)
+# @name loginUser
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "email": "carlos@empresa.com",
+  "senha": "123456"
+}
+
+### Armazena o token do login para reutilizar abaixo (se estiver usando REST Client):
+@tokenAdmin = {{loginAdmin.response.body.token}}
+@tokenUser = {{loginUser.response.body.token}}
+
+
+### --------------------------------------------------------------------
+### 3️⃣ TESTE 401: ACESSO SEM TOKEN (DEVE RETORNAR 401 UNAUTHORIZED)
+### --------------------------------------------------------------------
+GET {{baseUrl}}/usuarios
+
+
+### --------------------------------------------------------------------
+### 4️⃣ TESTE 200: LISTAR USUÁRIOS COM TOKEN VÁLIDO DE USER
+### --------------------------------------------------------------------
+GET {{baseUrl}}/usuarios
+Authorization: Bearer {{tokenUser}}
+
+
+### --------------------------------------------------------------------
+### 5️⃣ TESTE 200: CONSULTAR PERFIL DO USUÁRIO LOGADO
+### --------------------------------------------------------------------
+GET {{baseUrl}}/perfil
+Authorization: Bearer {{tokenUser}}
+
+
+### --------------------------------------------------------------------
+### 6️⃣ TESTE 403: USUÁRIO COMUM TENTANDO DELETAR PRODUTO (DEVE DAR 403 FORBIDDEN)
+### --------------------------------------------------------------------
+DELETE {{baseUrl}}/produtos/1
+Authorization: Bearer {{tokenUser}}
+
+
+### --------------------------------------------------------------------
+### 7️⃣ TESTE 200: ADMINISTRADOR DELETANDO PRODUTO COM SUCESSO
+### --------------------------------------------------------------------
+DELETE {{baseUrl}}/produtos/1
+Authorization: Bearer {{tokenAdmin}}

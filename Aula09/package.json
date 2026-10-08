@@ -1,0 +1,26 @@
+{
+  "name": "aula09-caixa-branca-preta",
+  "version": "1.0.0",
+  "description": "Projeto didático de Testes de Back-End - Técnicas de Caixa Branca e Caixa Preta com Jest",
+  "main": "src/emprestimo.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "jest",
+    "caixa-preta",
+    "caixa-branca",
+    "equivalencia",
+    "valores-limite",
+    "tabela-decisao",
+    "coverage",
+    "mutacao",
+    "senai"
+  ],
+  "author": "SENAI Canoas",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

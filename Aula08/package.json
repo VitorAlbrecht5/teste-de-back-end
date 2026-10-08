@@ -1,0 +1,23 @@
+{
+  "name": "aula08-automacao",
+  "version": "1.0.0",
+  "description": "Projeto didático de introdução a Code Coverage, CI e GitHub Actions",
+  "main": "src/calculadora.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "jest",
+    "coverage",
+    "ci",
+    "github-actions",
+    "senai",
+    "automacao"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

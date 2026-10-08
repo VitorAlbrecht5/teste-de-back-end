@@ -1,0 +1,16 @@
+{
+  "name": "aula03-mocks-e-dubles",
+  "version": "1.0.0",
+  "description": "Aula 03 - Mocks e Dublês de Teste no Back-End com Jest (SENAI)",
+  "main": "src/usuarios.service.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "test:watch": "jest --watchAll --verbose"
+  },
+  "keywords": ["jest", "tdd", "mocks", "dubles", "backend"],
+  "author": "SENAI",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

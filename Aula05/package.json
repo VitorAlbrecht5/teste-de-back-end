@@ -1,0 +1,31 @@
+{
+  "name": "aula05-testes-de-persistencia",
+  "version": "1.0.0",
+  "description": "Aula 05 - Testes de Persistência com MongoDB, Mongoose e mongodb-memory-server (SENAI)",
+  "main": "src/produto.model.js",
+  "scripts": {
+    "test": "jest --verbose --runInBand",
+    "test:watch": "jest --watchAll --verbose --runInBand"
+  },
+  "keywords": [
+    "mongoose",
+    "mongodb-memory-server",
+    "jest",
+    "persistencia",
+    "schema-validation",
+    "senai"
+  ],
+  "author": "SENAI",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^8.2.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^9.1.6"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 30000
+  }
+}

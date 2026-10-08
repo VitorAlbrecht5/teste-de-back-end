@@ -1,0 +1,6 @@
+//"Babel, prepare o JavaScript para a versão atual do Node."
+{
+    "presets":[
+        ["@babel/preset-env", {"targets": {"node": "current"}}]
+    ]
+}

@@ -1,0 +1,32 @@
+name: Pipeline de Testes Automatizados (Aula 08)
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  executar-testes-aula08:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./Aula08
+
+    steps:
+      - name: 1. Baixar código do repositório (Checkout)
+        uses: actions/checkout@v4
+
+      - name: 2. Configurar ambiente Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: './Aula08/package-lock.json'
+
+      - name: 3. Instalar dependências da Aula 08
+        run: npm ci
+
+      - name: 4. Executar bateria de testes com Jest
+        run: npm test

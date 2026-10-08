@@ -1,0 +1,35 @@
+{
+  "name": "aula07-testes-e2e-sistema",
+  "version": "1.0.0",
+  "description": "Aula 07 - Testes de Sistema (E2E) e Testes de Aceitação com Node.js, Express, Jest e Supertest (SENAI)",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "jest --verbose --runInBand",
+    "test:watch": "jest --watchAll --verbose --runInBand"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "jwt",
+    "jest",
+    "supertest",
+    "e2e",
+    "testes-de-sistema",
+    "testes-de-aceitacao",
+    "senai"
+  ],
+  "author": "SENAI",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 10000
+  }
+}
